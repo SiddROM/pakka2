@@ -125,7 +125,7 @@ try:
     redis_info = Var.REDIS_URI.split(":")
     dB = Redis(
         host="redis",
-        port="//admin",
+        port="admin",
         password=Var.REDIS_PASS,
         charset="utf-8",
         decode_responses=True,
