@@ -119,8 +119,17 @@ except Exception as ee:
     LOGS.critical("Something Went Wrong...\nExiting...")
     LOGS.error(str(ee))
     exit()
-
-
+    
+    try:
+    LOGS.info("Trying Connect With Redis database")
+    redis_info = Var.REDIS_URI.split(":")
+    dB = Redis(
+        host=redis_info[0],
+        port=redis_info[1],
+        password=Var.REDIS_PASS,
+        charset="utf-8",
+        decode_responses=True,
+    )
     LOGS.info("successfully connected to Redis database")
     ask_(dB)
     loader(MEM, dB, LOGS)
