@@ -124,8 +124,8 @@ try:
     LOGS.info("Trying Connect With Redis database")
     redis_info = Var.REDIS_URI.split(":")
     dB = Redis(
-        host=redis_info[0],
-        port=redis_info[1],
+        host=redis,
+        port=admin,
         password=Var.REDIS_PASS,
         charset="utf-8",
         decode_responses=True,
