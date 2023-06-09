@@ -120,7 +120,7 @@ except Exception as ee:
     LOGS.error(str(ee))
     exit()
     
-    try:
+try:
     LOGS.info("Trying Connect With Redis database")
     redis_info = Var.REDIS_URI.split(":")
     dB = Redis(
